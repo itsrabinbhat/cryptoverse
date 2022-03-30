@@ -5,14 +5,14 @@ const cryptoHeaders = {
   "X-RapidAPI-Key": "07e738e957msha128076d1898cf4p1b1001jsn0d5c3a9d5e49",
 };
 
-const createRequest = (url) => ({ url: "/coins", headers: cryptoHeaders });
+const createRequest = (url) => ({ url, headers: cryptoHeaders });
 
 export const cryptoApi = createApi({
   reducerPath: "cryptoApi",
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getCryptos: builder.query({
-      query: () => createRequest("/coins"),
+      query: (count) => createRequest(`/coins?limit=${count}`),
     }),
   }),
 });

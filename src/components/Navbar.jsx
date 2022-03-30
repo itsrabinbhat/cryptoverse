@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link to="/">Cryptoverse</Link>
         </Typography.Title>
       </div>
-      <Menu theme="dark">
+      <Menu theme="dark" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1" icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>

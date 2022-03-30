@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import {
-  Curriencies,
+  Currencies,
   Homepage,
   Navbar,
   Exchanges,
@@ -22,7 +22,7 @@ const App = () => {
           <div className="routes">
             <Routes>
               <Route path="/" element={<Homepage />} />
-              <Route path="/cryptocurrencies" element={<Curriencies />} />
+              <Route path="/cryptocurrencies" element={<Currencies />} />
               <Route path="/exchanges" element={<Exchanges />} />
               <Route path="/news" element={<News />} />
               <Route path="/crypto/:coinId" element={<CryptoDetails />} />
