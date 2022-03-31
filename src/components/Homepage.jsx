@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import { Typography, Row, Col, Statistic } from "antd";
+import { Typography, Row, Col, Statistic, Spin } from "antd";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import { Currencies } from "./index";
@@ -15,37 +15,43 @@ const Homepage = () => {
     <>
       <Title level={2}>Global Crypto Stats</Title>
       {isFetching ? (
-        "Loading..."
+        <Spin
+          tip="Loading"
+          style={{
+            marginTop: "5%",
+            marginLeft: "50%",
+          }}
+        />
       ) : (
         <Row>
           <Col span={12}>
             <Statistic
               title="Total Cryptocurrencies"
-              value={globalStats.total}
+              value={globalStats?.total}
             />
           </Col>
           <Col span={12}>
             <Statistic
               title="Total Exchanges"
-              value={millify(globalStats.totalExchanges)}
+              value={millify(globalStats?.totalExchanges)}
             />
           </Col>
           <Col span={12}>
             <Statistic
               title="Total Market Cap"
-              value={millify(globalStats.totalMarketCap)}
+              value={millify(globalStats?.totalMarketCap)}
             />
           </Col>
           <Col span={12}>
             <Statistic
               title="Total 24h Volume"
-              value={millify(globalStats.total24hVolume)}
+              value={millify(globalStats?.total24hVolume)}
             />
           </Col>
           <Col span={12}>
             <Statistic
               title="Total Markets"
-              value={millify(globalStats.totalMarkets)}
+              value={millify(globalStats?.totalMarkets)}
             />
           </Col>
         </Row>
@@ -65,7 +71,7 @@ const Homepage = () => {
           Latest Crypto News
         </Title>
         <Title level={4} className="show-more">
-          <Link to="/cryptocurrencies">Show more...</Link>
+          <Link to="/news">Show more...</Link>
         </Title>
       </div>
 
