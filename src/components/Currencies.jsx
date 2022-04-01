@@ -50,14 +50,8 @@ const Currencies = ({ simplified }) => {
             }}
           />
         ) : (
-          cryptos?.map((currency) => (
-            <Col
-              key={currency.id}
-              xs={24}
-              xm={12}
-              lg={8}
-              className="crypto-card"
-            >
+          cryptos?.map((currency, idx) => (
+            <Col key={idx} xs={24} xm={12} lg={8} className="crypto-card">
               <Link to={`/crypto/${currency.uuid}`}>
                 <Card
                   title={`${currency.rank}.${currency.name}`}

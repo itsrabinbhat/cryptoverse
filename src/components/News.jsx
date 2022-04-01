@@ -59,7 +59,7 @@ const News = ({ simplified }) => {
       )}
       <Row gutter={[16, 16]} className="crypto-news-container">
         {newsList?.value?.map((news, idx) => (
-          <Col xs={24} xm={12} xl={8} key={idx}>
+          <Col xs={24} xm={12} lg={8} key={idx}>
             <a href={news.url} target="_blank" rel="noreferrer">
               <Card hoverable className="news-card">
                 <div
