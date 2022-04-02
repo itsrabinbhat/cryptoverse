@@ -16,8 +16,6 @@ const News = ({ simplified }) => {
   const demoImage =
     "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
-  console.log(newsList);
-
   if (isFetching)
     return (
       <Spin
@@ -25,6 +23,7 @@ const News = ({ simplified }) => {
         style={{
           marginTop: "10%",
           marginLeft: "50%",
+          transform: "translateX(-50%)",
         }}
       />
     );

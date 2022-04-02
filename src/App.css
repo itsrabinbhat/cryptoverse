@@ -66,7 +66,7 @@ a:hover {
   right: 10px !important;
   top: 25px !important;
   font-size: 1.2rem !important;
-  background-color: var(--bgSecondary) !important;
+  background-color: var(--bgSecondary);
   border: none !important;
 }
 
@@ -368,6 +368,7 @@ a:hover {
   align-items: center;
   margin-top: 40px;
 }
+
 .show-more {
   margin-top: 0px !important;
 }
@@ -421,4 +422,25 @@ a:hover {
   flex-direction: column;
   padding: 20px;
   align-items: center;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-crypto{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .select-container {
+    flex-direction: column;
+  }
+
+  .select-news{
+    width: 100%;
+  }
 }

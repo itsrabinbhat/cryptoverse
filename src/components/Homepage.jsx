@@ -20,6 +20,7 @@ const Homepage = () => {
           style={{
             marginTop: "5%",
             marginLeft: "50%",
+            transform: "translateX(-50%)",
           }}
         />
       ) : (

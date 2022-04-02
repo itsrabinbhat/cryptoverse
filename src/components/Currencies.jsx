@@ -47,6 +47,7 @@ const Currencies = ({ simplified }) => {
             style={{
               marginTop: "10%",
               marginLeft: "50%",
+              transform: "translateX(-50%)",
             }}
           />
         ) : (
