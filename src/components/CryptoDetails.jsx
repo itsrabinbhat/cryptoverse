@@ -5,6 +5,7 @@ import {
   useGetCryptoHistoryQuery,
 } from "../services/cryptoApi";
 import { Spin, Typography, Select, Row, Col } from "antd";
+import LineChart from "./LineChart";
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
@@ -12,6 +13,8 @@ const CryptoDetails = () => {
   const { data: cryptoDetails, isFetching } = useGetCryptoDetailsQuery({
     coinId,
   });
+
+  console.log(timeperiod);
 
   const { data: cryptoHistory } = useGetCryptoHistoryQuery({
     coinId,
@@ -43,8 +46,8 @@ const CryptoDetails = () => {
           Price
         </Title>
         <p>
-          {cryptoDetails.name} Live price in US Dollar (USD). View value
-          statistics, market cap and supply.
+          {cryptoDetails?.data?.coin.name} Live price in US Dollar (USD). View
+          value statistics, market cap and supply.
         </p>
       </Col>
       <Select
@@ -53,10 +56,16 @@ const CryptoDetails = () => {
         defaultValue="7d"
         onChange={(value) => setTimeperiod(value)}
       >
-        {time?.map((item, idx) => (
-          <Option key={idx}>{item}</Option>
+        {time?.map((item) => (
+          <Option key={item}>{item}</Option>
         ))}
       </Select>
+
+      <LineChart
+        cryptoHistory={cryptoHistory}
+        cryptoName={cryptoDetails?.data?.coin.name}
+        currentPrice={cryptoDetails.data.coin.price}
+      />
     </Col>
   );
 };

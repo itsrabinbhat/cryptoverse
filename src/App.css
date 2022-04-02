@@ -344,6 +344,7 @@ a:hover {
   justify-content: space-between;
   gap: 50px;
   color: #0071bd;
+  margin-top: 1rem;
 }
 .chart-title {
   color: #0071bd !important;
