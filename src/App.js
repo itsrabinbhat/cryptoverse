@@ -10,8 +10,10 @@ import {
 } from "./components";
 import { Typography, Layout, Space } from "antd";
 import { Routes, Route, Link } from "react-router-dom";
+import useTitle from "./hooks/useTitle";
 
 const App = () => {
+  useTitle("Cryptoverse");
   return (
     <div className="app">
       <div className="navbar">

@@ -3,8 +3,10 @@ import { Card, Row, Col, Input, Typography, Spin } from "antd";
 import millify from "millify";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Link } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 const Currencies = ({ simplified }) => {
+  useTitle("Crypto Currencies | Cryptoverse");
   const { data: cryptoList, isFetching } = useGetCryptosQuery(
     simplified ? 10 : 100
   );

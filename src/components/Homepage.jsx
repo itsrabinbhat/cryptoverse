@@ -5,8 +5,10 @@ import millify from "millify";
 import { Link } from "react-router-dom";
 import { Currencies } from "./index";
 import News from "./News";
+import useTitle from "../hooks/useTitle";
 
 const Homepage = () => {
+  useTitle("Home | Cryptoverse");
   const { data, isFetching } = useGetCryptosQuery(10);
 
   const { Title } = Typography;

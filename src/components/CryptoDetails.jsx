@@ -20,8 +20,10 @@ import {
 } from "@ant-design/icons";
 
 import parser from "html-react-parser";
+import useTitle from "../hooks/useTitle";
 
 const CryptoDetails = () => {
+  useTitle("Crypto Details | Cryptoverse");
   const { coinId } = useParams();
   const [timeperiod, setTimeperiod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery({

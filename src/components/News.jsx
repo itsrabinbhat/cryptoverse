@@ -3,8 +3,10 @@ import { Typography, Row, Col, Card, Avatar, Select, Spin } from "antd";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import moment from "moment";
+import useTitle from "../hooks/useTitle";
 
 const News = ({ simplified }) => {
+  useTitle("News | Cryptoverse");
   const [category, setCategory] = useState("Cryptocurrenct");
   const { data: newsList, isFetching } = useGetCryptoNewsQuery({
     category,

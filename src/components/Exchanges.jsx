@@ -1,8 +1,10 @@
 import React from "react";
 import { Row, Col, Typography, Collapse, Spin } from "antd";
 import { useGetExchangesQuery } from "../services/cryptoApi";
+import useTitle from "../hooks/useTitle";
 
 const Exchanges = () => {
+  useTitle("Exchanges | Cryptoverse");
   const { data, isFetching } = useGetExchangesQuery();
   const exchanges = data?.data?.exchanges;
   const { Title, Text } = Typography;
